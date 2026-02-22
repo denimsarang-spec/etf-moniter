@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>퇴직연금 대상 ETF - 2일연속 매수 모니터링</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎯 퇴직연금 대상 ETF 모니터링</h1>
+      <p>외인·기관 1만주 이상 2일연속 매수 현황</p>
+      <div class="status">
+        <span id="lastUpdate">마지막 업데이트: --:--</span>
+        <button onclick="manualRefresh()" class="refresh-btn">🔄 새로고침</button>
+      </div>
+    </header>
 
+    <main>
+      <div class="stats">
+        <div class="stat-card">
+          <h3>발견된 ETF</h3>
+          <p id="etfCount" class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>총 매수량</h3>
+          <p id="totalBuy" class="stat-number">0</p>
+        </div>
+        <div class="stat-card">
+          <h3>평균 수익률</h3>
+          <p id="avgYield" class="stat-number">0%</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table id="etfTable" class="data-table">
+          <thead>
+            <tr>
+              <th>순위</th>
+              <th>종목코드</th>
+              <th>종목명</th>
+              <th>외인 매수량</th>
+              <th>기관 매수량</th>
+              <th>총 매수량</th>
+              <th>수익률</th>
+              <th>2일연속</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <tr>
+              <td colspan="8" class="loading">데이터 로딩 중...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer class="info">
+        <h4>📊 필터링 조건</h4>
+        <ul>
+          <li>✓ 퇴직연금 대상 종목만 표시</li>
+          <li>✓ 외인+기관 1만주 이상 매수</li>
+          <li>✓ 2일 연속 매수 종목만 표시</li>
+          <li>✓ 매수량 기준 내림차순 정렬</li>
+          <li>✓ 매일 자동 업데이트</li>
+        </ul>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
